@@ -65,7 +65,7 @@ header {
     text-align: center;
     text-transform: uppercase;
     text-shadow: black 0px 0px 4px;
-    background-image: url('/bg.png');
+    background-image: url('https://firamisu.github.io/bg.png');
     background-position: center;
     background-size: cover;
 }
@@ -113,7 +113,7 @@ header button:hover {
     margin-top: 10vh;
     height: 60%;
     width: 50%;
-    background-image: url('bgform.png');
+    background-image: url('https://firamisu.github.io/bgform.png');
     border: 2px white solid;
 }
 .form-box select {
