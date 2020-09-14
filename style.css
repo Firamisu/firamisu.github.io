@@ -65,7 +65,7 @@ header {
     text-align: center;
     text-transform: uppercase;
     text-shadow: black 0px 0px 4px;
-    background-image: url('bg.png');
+    background-image: url('/bg.png');
     background-position: center;
     background-size: cover;
 }
