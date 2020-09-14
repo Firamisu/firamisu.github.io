@@ -1,0 +1,172 @@
+* {
+    margin: 0;
+    padding: 0; 
+    box-sizing: border-box;
+}
+body {
+    background: #232323;
+    color: white;
+}
+nav {
+    width: 100vw;
+    height: 5vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: tomato;
+}
+nav .logo {
+    height: 100%;
+    width: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Ranchers';
+    font-size: 22px;
+    letter-spacing: 2px;
+}
+nav .logo img {
+    height: 90%;
+}
+nav .navel {
+    width: 26.666%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: tomato;
+}
+nav .navel:hover {
+    background: rgb(255, 115, 90);
+    cursor: pointer;
+}
+nav a {
+    color: white;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 19px;
+    font-family: 'Poppins', sans-serif;
+}
+.dark {
+    height: 95vh;
+    width: 100vw;
+    position: absolute;
+    background: rgba(0, 0, 0, 0.432);
+    z-index: 2;
+}
+
+header {
+    height: 95vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.8rem;
+    text-align: center;
+    text-transform: uppercase;
+    text-shadow: black 0px 0px 4px;
+    background-image: url('bg.png');
+    background-position: center;
+    background-size: cover;
+}
+header p {
+    z-index: 3;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+}
+header button {
+    z-index: 3;
+    height: 60px;
+    width: 250px;
+    border: 4px white solid;
+    background: transparent;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-size: 24px;
+    text-transform: uppercase;
+    text-shadow: black 0 0 4px;
+    transition: linear 0.1s background;
+}
+header button:hover {
+    background: white;
+    color: black;
+    cursor: pointer;
+    text-shadow: 0 0 0 #fff;
+    transition: linear 0.1s background;
+}
+.form-box {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    height: 95vh;
+    width: 100vw;
+    visibility: hidden;
+    z-index: 10;
+}
+.form-box form {
+    z-index: 11;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 10vh;
+    height: 60%;
+    width: 50%;
+    background-image: url('bgform.png');
+    border: 2px white solid;
+}
+.form-box select {
+    border: 0;
+    width: 30vw;
+    height: 4vh;
+    margin-bottom: 10px;
+}
+.form-box form input {
+    border: 0;
+    width: 30vw;
+    height: 4vh;
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 20px;
+    font-family: 'Poppins', sans-serif;
+}
+.form-box form input[type="submit"] {
+    height: 5vh;
+    margin-top: 10px;
+    border: 2px solid white;
+    transition: linear 0.1s background;
+}
+.form-box form input[type="submit"]:hover {
+    cursor: pointer;
+    background-color: transparent;
+    border: 2px solid white;
+    color: white;
+    transition: linear 0.1s background;
+}
+
+.form-box select option {
+    text-align: center;
+}
+.form-box form img {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    height: 22px;
+}
+.form-box form img:hover {
+    cursor: pointer;
+}
+
+@media screen and ( max-width: 630px ) {
+
+    nav .logo {
+        display: none;
+    }
+    .form-box form {
+       width: 90%;
+    }
+    .form-box select, .form-box form input {
+        width: 90%;
+    }
+}
