@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3F</title>
+</head>
+<body>
+    <!-- <input type="text" value="12"> <button onclick="updateLesson()">dd</button> DEBUG--> 
+    <table>
+        <tr>
+            <th>Numer</th>
+            <th>Godzina</th>
+            <th>Poniedziałek</th>
+            <th>Wtorek</th>
+            <th>Środa</th>
+            <th>Czwartek</th>
+            <th>Piątek</th>
+        </tr>
+        <tr>
+            <th>1</th>
+            <th>7:30- 8:15</th>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <th>2</th>
+            <th>8:20- 9:05</th>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <th>3</th>
+            <th>9:10- 9:55</th>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <th>4</th>
+            <th>10:00-10:45</th>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <th>5</th>
+            <th>11:00-11:45</th>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <th>6</th>
+            <th>11:50-12:35</th>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <th>7</th>
+            <th>12:40-13:25</th>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <th>8</th>
+            <th>13:30-14:15</th>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <th>9</th>
+            <th>14:20-15:05</th>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <th>10</th>
+            <th>15:15-16:00</th>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+
+    
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        table, tr, th, td {
+            border: 1px solid rgb(65, 58, 58);
+            border-collapse: collapse;
+            padding: 10px;
+            transition: ease-in 0.15s;
+            cursor: pointer;
+        }
+
+        table {
+            width: 95vw;
+            height: 0vh;
+            transform: translateX(2.5vw) translateY(2vh);
+            animation: slide 1s linear 1;
+        }
+
+
+        body {
+            background-color: #232323;
+            color: orangered;
+            font-family: monospace
+        }
+
+        @keyframes slide {
+            from {
+                transform: scale(0) translateX(2.5vw) translateY(2vh);
+            }
+            to {
+                transform: scale(1) translateX(2.5vw) translateY(2vh);
+            }
+        }
+    </style>
+
+    <script>
+        let g1 = [
+            [
+                {
+                    index: 3,
+                    name: "Matematyka"
+                },
+                "Matematyka",
+                "Programowanie Apliakcji Internetowych",
+                "Programowanie Apliakcji Internetowych",
+                "Język Niemiecki",
+                "Język Niemiecki"
+            ],
+            [
+                {
+                    index: 1,
+                    name: "Praktyka"
+                },
+                "Praktyka",
+                "Historia i Społeczeństwo",
+                "Język Polski",
+                "Język Polski",
+                "Systemy Baz Danych"
+                
+            ],
+            [
+                {
+                    index: 3,
+                    name: "Projektowanie i montaż lokalnych sieci komputerowych"
+                },
+                "Język Angielski",
+                "Informatyka",
+                "Matematyka",
+                "Matematyka",
+                "WF"
+            ],
+            [
+                {
+                    index: 2,
+                    name: "Język Angielski"
+                },
+                "Aplikacje Desktopowe",
+                "Aplikacje Desktopowe",
+                "Witryny",
+                "Witryny",
+                "Systemy Baz Danych",
+                "Praktyka",
+                "Praktyka",
+                "Praktyka"
+            ],
+            [
+                {
+                    index: 1,
+                    name: "WF"
+                },
+                "WF",
+                "Religia",
+                "Zajęcia Wychowawcze",
+                "Administracja Sieciowymi Systemami Operacyjnymi",
+                "Administracja Sieciowymi Systemami Operacyjnymi",
+                "Systemy Operacyjne",
+                "Systemy Operacyjne"      
+            ]
+        ]
+        let lesson, lastEle;
+
+        g1.forEach((element, index) => {
+            
+            element.forEach((el, i) => {
+                if (i == 0) {
+                    start = el.index-1;
+                    document.querySelector(`tr:nth-child(${start+i+2}) td:nth-child(${index+3})`).innerHTML = el.name;
+                } else {
+                    document.querySelector(`tr:nth-child(${start+i+2}) td:nth-child(${index+3})`).innerHTML = el;
+                }
+            });
+            // document.querySelector(`tr:nth-child(2) td:nth-child(3)`).innerHTML = 'XD';
+        });
+
+        document.querySelectorAll('td').forEach((el) => {
+            el.addEventListener('mouseover', () => {
+                el.parentNode.style.background = "#303030";
+            });
+            el.addEventListener('mouseout', () => {
+                el.parentNode.style.background = "";
+            });
+        });
+
+        updateLesson();
+        
+
+        setTimeout(() => {
+        
+            updateLesson();
+            setInterval(() => {
+                updateLesson();
+            }, 60 * 1000);
+
+        }, (60 * 1000) - (new Date().getSeconds() * 1000));
+
+        function updateLesson() {
+            const minutes = new Date().getHours() * 60 + new Date().getMinutes();
+            // const minutes = (document.querySelector('input').value-0) * 60; DEBUG
+    
+            switch (true) {
+                case (minutes >= 7 * 60 + 30 && minutes < 8 * 60 + 20):
+                    lesson = 1;
+                    break;
+                case (minutes >= 8 * 60 + 20 && minutes < 9 * 60 + 10):
+                    lesson = 2;
+                    break;
+                case (minutes >= 9 * 60 + 10 && minutes < 10 * 60):
+                    lesson = 3;
+                    break;
+                case (minutes >= 10 * 60 && minutes < 11 * 60):
+                    lesson = 4;
+                    break;
+                case (minutes >= 11 * 60 && minutes < 11 * 60 + 50):
+                    lesson = 5;  
+                    break;
+                case (minutes >= 11 * 60 + 50 && minutes < 12 * 60 + 40):
+                    lesson = 6;
+                    break;
+                case (minutes >= 12 * 60 + 40 && minutes < 13 * 60 + 30):
+                    lesson = 7;   
+                    break;
+                case (minutes >= 13 * 60 + 30 && minutes < 14 * 60 + 20):
+                    lesson = 8;
+                    break;
+                case (minutes >= 14 * 60 + 20 && minutes < 15 * 60 + 15):
+                    lesson = 9;
+                    break;
+                case (minutes >= 15 * 60 + 15 && minutes <=  16 * 60):
+                    lesson = 10;
+                    break;
+                case (minutes > 16 * 60): {
+                    lesson = 12;
+                    break
+                }
+            }
+            
+            if (lastEle) lastEle.style.background = '';
+            lastEle = document.querySelector(`tr:nth-child(${lesson+1}) td:nth-child(${new Date().getDay()+2})`);
+            document.querySelector(`tr:nth-child(${lesson+1}) td:nth-child(${new Date().getDay()+2})`).style.background = "#333";
+
+            console.log(lesson);
+        }
+        
+    </script>
+</body>
+</html>
