@@ -19,6 +19,7 @@ body {
 
 #registers {
     display: flex;
+    justify-content: center;
     flex-wrap: wrap;
     gap: 10px;
 }
@@ -54,4 +55,24 @@ body {
     text-transform: uppercase;
     font-size: 1rem;
 }
+
+.command {
+    margin: 10px;
+    display: flex;
+}
+
+.command select {
+    border: 1px solid #232323;
+    border-radius: 0;
+    padding: 5px;
+}
+
+.command .cont select{
+    padding: 6px;
+}
+
+.command .cont button{
+    padding: 5px;
+}
+
 

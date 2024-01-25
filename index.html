@@ -15,24 +15,33 @@
 
         </div>
 
-        <div id="commands">
-            <span style="background: green;">MOV</span> 
-            <span style="background: green;">XCHG</span> 
-            <span style="background: green;">INC</span> 
-            <span style="background: green;">DEC</span> 
-            <span style="background: green;">NOT</span> 
-            <span style="background: green;">NEG</span> 
-            <span style="background: green;">ADD</span> 
-            <span style="background: green;">SUB</span> 
-            <span style="background: green;">AND</span> 
-            <span style="background: green;">OR</span> 
-            <span style="background: green;">XOR</span> 
-            <span style="background: green;">MUL</span> 
-            <span style="background: red;">IMUL</span> 
-            <span style="background: green;">DIV</span> 
-            <span style="background: red;">IDIV</span> 
+
+        <div class="command">
+            <select>
+                <option value="MOV">MOV</option>
+                <option value="XCHG">XCHG</option>
+                <option value="INC">INC</option>
+                <option value="DEC">DEC</option>
+                <option value="NOT">NOT</option>
+                <option value="NEG">NEG</option>
+                <option value="ADD">ADD</option>
+                <option value="SUB">SUB</option>
+                <option value="AND">AND</option>
+                <option value="OR">OR</option>
+                <option value="XOR">XOR</option>
+                <option value="MUL">MUL</option>
+                <option value="IMUL">IMUL</option>
+                <option value="DIV">DIV</option>
+                <option value="IDIV">IDIV</option>
+            </select>
+            <div class="cont"></div>
+        </div>
+        <div>
+            <button onclick="setRandomValues()">Ustaw losowe wartości</button>
+            <button onclick="reset()">Reset</button>
         </div>
     </div>
+
 
     <script src='main.js'></script>
 </body>
